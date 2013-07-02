@@ -67,9 +67,9 @@ Default value: null
 
 Called before timer starts, with the options object as parameter. 
 
-* Return nothing (or `undefined`) to star the delay.
-* Return `true` to skip delay and proceed to `after()` and/or next task. 
-* Return `false` to skip delay and proceed to the next task without calling `after()`. 
+* Return nothing (or `undefined`) to start the delay.
+* Return `true` to skip delay and proceed to `after()` and/or next grunt task. 
+* Return `false` to skip delay and proceed to the next grunt task without calling `after()`. 
 * Return a `string` to use as warning and fail grunt.
 
 #### options.after
@@ -83,39 +83,6 @@ Called after timer ends, with the options object as parameter.
 * Return `true` to wait another round.
 * Return `false` to fail grunt.
 * Return a `string` to use as warning and fail grunt.
-
-### Usage Examples
-
-#### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
-
-```js
-grunt.initConfig({
-  wait: {
-    options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-})
-```
-
-#### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
-
-```js
-grunt.initConfig({
-  wait: {
-    options: {
-      separator: ': ',
-      punctuation: ' !!!',
-    },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-})
-```
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
