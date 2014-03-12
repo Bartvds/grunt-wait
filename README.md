@@ -59,7 +59,9 @@ grunt.initConfig({
 Type: `number`
 Default value: `0`
 
-Wait duration in milliseconds.
+Wait duration in milliseconds. 
+
+Internaly uses `setTimeout()`, the maximum delay is 2147483647 milliseconds (about 24 days).
 
 #### options.before
 Type: `function(options)`
