@@ -1,7 +1,7 @@
 {
   "name": "grunt-wait",
   "description": "Stop grunting and wait for a signal to continue",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "homepage": "https://github.com/Bartvds/grunt-wait",
   "author": {
     "name": "Bart van der Schoor",
@@ -15,26 +15,35 @@
   "bugs": {
     "url": "https://github.com/Bartvds/grunt-wait/issues"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/Bartvds/grunt-wait/blob/master/LICENSE-MIT"
-    }
-  ],
-  "main": "Gruntfile.js",
+  "license": "MIT",
+  "main": "tasks/wait.js",
   "engines": {
-    "node": ">= 0.8.0"
+    "node": ">= 0.10",
+    "npm": ">= 2.15"
   },
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test",
+    "cover": "nyc --reporter=html --reporter=text grunt test",
+    "coveralls": "npm run cover && nyc report --reporter=text-lcov | coveralls"
+  },
+  "nyc": {
+    "all": true,
+    "include": [
+      "tasks/*.js"
+    ],
+    "exclude": [
+      "Gruntfile.js"
+    ]
   },
   "devDependencies": {
-    "grunt-contrib-jshint": "~0.6.0",
-    "grunt": "~0.4.1",
-    "grunt-cli": "~0.1.9"
+    "coveralls": "~2.13.1",
+    "grunt": "~1.0.1",
+    "grunt-cli": "~1.2.0",
+    "grunt-contrib-jshint": "~1.1.0",
+    "nyc": "~11.1.0"
   },
   "peerDependencies": {
-    "grunt": "~0.4.1"
+    "grunt": ">=0.4.0"
   },
   "keywords": [
     "gruntplugin",

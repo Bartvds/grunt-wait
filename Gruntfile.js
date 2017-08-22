@@ -2,7 +2,7 @@
  * grunt-wait
  * https://github.com/Bartvds/grunt-wait
  *
- * Copyright (c) 2013 Bart van der Schoor
+ * Copyright (c) 2017 Bart van der Schoor
  * Licensed under the MIT license.
  */
 
@@ -69,6 +69,22 @@ module.exports = function (grunt) {
 					},
 					after: function () {
 						console.log('after() should be around 10ms');
+					}
+				}
+			},
+			waitAnother: {
+				options: {
+					delay: 500,
+					before: function () {
+						console.log('before()');
+					},
+					after: function (options) {
+						options._calls = (options._calls || 0) + 1;
+						if (options._calls === 1) {
+							return 500;
+						}
+
+						console.log('after() should be around 1000ms');
 					}
 				}
 			},

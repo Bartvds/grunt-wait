@@ -1,11 +1,14 @@
 # grunt-wait
 
-[![Build Status](https://secure.travis-ci.org/Bartvds/grunt-wait.png?branch=master)](http://travis-ci.org/Bartvds/grunt-wait) [![Dependency Status](https://gemnasium.com/Bartvds/grunt-wait.png)](https://gemnasium.com/Bartvds/grunt-wait) [![NPM version](https://badge.fury.io/js/grunt-wait.png)](http://badge.fury.io/js/grunt-wait)
+[![Build Status](https://travis-ci.org/Bartvds/grunt-wait.svg?branch=master)](http://travis-ci.org/Bartvds/grunt-wait)
+[![Coverage Status](https://coveralls.io/repos/github/Bartvds/grunt-wait/badge.svg?branch=master)](https://coveralls.io/github/Bartvds/grunt-wait?branch=master)
+[![Dependency Status](https://gemnasium.com/badges/github.com/Bartvds/grunt-wait.svg)](https://gemnasium.com/github.com/Bartvds/grunt-wait)
+[![npm version](https://badge.fury.io/js/grunt-wait.svg)](http://badge.fury.io/js/grunt-wait)
 
 > Delay the grunt build chain with callbacks
 
 ## Getting Started
-This plugin requires Grunt `~0.4.1`
+This plugin requires Grunt `>=0.4.0`
 
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
@@ -26,30 +29,30 @@ In your project's Gruntfile, add a section named `wait` to the data object passe
 
 ```js
 grunt.initConfig({
-	wait: {
-		options: {
-			delay: 500
-		},
-		pause: {      
-			options: {
-				before : function(options) {
-					console.log('pausing %dms', options.delay);
-				},
-				after : function() {
-					console.log('pause end');
-				}
-			}
-		},
-		random: {      
-			options: {
-				delay: 10,
-				after : function() {
-					console.log('gamble');
-					return Math.random() < 0.05 ? false : true;
-				}
-			}
-		}
-	}
+  wait: {
+    options: {
+      delay: 500
+    },
+    pause: {
+      options: {
+        before : function(options) {
+          console.log('pausing %dms', options.delay);
+        },
+        after: function() {
+          console.log('pause end');
+        }
+      }
+    },
+    random: {
+      options: {
+        delay: 10,
+        after: function() {
+          console.log('gamble');
+          return Math.random() < 0.05 ? false : true;
+        }
+      }
+    }
+  }
 })
 ```
 
@@ -90,4 +93,4 @@ Called after timer ends, with the options object as parameter.
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
-_(Nothing yet)_
+See the [CHANGELOG](/CHANGELOG).
