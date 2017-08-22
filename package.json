@@ -23,8 +23,8 @@
   },
   "scripts": {
     "test": "grunt test",
-    "coverage": "nyc --reporter=html --reporter=text grunt test",
-    "coveralls": "nyc report --reporter=text-lcov | coveralls"
+    "cover": "nyc --reporter=html --reporter=text grunt test",
+    "coveralls": "npm run cover && nyc report --reporter=text-lcov | coveralls"
   },
   "nyc": {
     "all": true,
