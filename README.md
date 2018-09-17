@@ -2,8 +2,8 @@
 
 [![Build Status](https://travis-ci.org/Bartvds/grunt-wait.svg?branch=master)](http://travis-ci.org/Bartvds/grunt-wait)
 [![Coverage Status](https://coveralls.io/repos/github/Bartvds/grunt-wait/badge.svg?branch=master)](https://coveralls.io/github/Bartvds/grunt-wait?branch=master)
-[![Dependency Status](https://david-dm.org/Bartvds/grunt-wait.svg)](hhttps://david-dm.org/Bartvds/grunt-wait.svg)
-[![npm version](https://img.shields.io/npm/v/grunt-wait.svg)](https://img.shields.io/npm/v/grunt-wait.svg)
+[![Dependency Status](https://david-dm.org/Bartvds/grunt-wait.svg)](hhttps://david-dm.org/Bartvds/grunt-wait)
+[![npm version](https://img.shields.io/npm/v/grunt-wait.svg)](https://www.npmjs.com/package/grunt-wait)
 
 > Delay the grunt build chain with callbacks
 
